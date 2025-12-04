@@ -19,7 +19,10 @@ app = FastAPI(title="CrySense AI API")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, specify the frontend origin
+    allow_origins=[
+        "http://localhost:5173",  # Development
+        "https://senekela.github.io"  # Production GitHub Pages
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
