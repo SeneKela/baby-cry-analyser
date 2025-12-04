@@ -1,4 +1,4 @@
-# 🍼 CrySense AI — Baby Cry Analysis System
+# 🍼 Baby Cry Analyser — Baby Cry Analysis System
 
 <div align="center">
 
@@ -16,7 +16,7 @@
 
 ## 📖 Overview
 
-**CrySense AI** is a deep learning-based system designed to classify baby cries into five emotional categories, helping parents and caregivers understand what their baby needs. Using audio analysis and convolutional neural networks, CrySense provides real-time predictions with confidence scores and actionable recommendations.
+Cry Analyser is a deep learning-based system designed to classify baby cries into five emotional categories, helping parents and caregivers understand what their baby needs. Using audio analysis and convolutional neural networks, CrySense provides real-time predictions with confidence scores and actionable recommendations.
 
 ### 🎯 Cry Categories
 
