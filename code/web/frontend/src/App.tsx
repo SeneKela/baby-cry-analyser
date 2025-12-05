@@ -175,7 +175,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative size-full min-h-screen flex items-center justify-center bg-gray-50 overflow-hidden">
+    <div className="relative size-full min-h-screen flex items-center justify-center bg-gray-50 overflow-hidden p-4 sm:p-6 md:p-8">
       <input
         ref={fileInputRef}
         type="file"
@@ -198,7 +198,7 @@ export default function App() {
         }}
       />
 
-      <div className="relative w-full max-w-6xl aspect-[1512/982]">
+      <div className="relative w-full max-w-[95vw] sm:max-w-[600px] md:max-w-[800px] lg:max-w-6xl lg:aspect-[1512/982]">
         <svg className="block size-full" fill="none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1512 982">
           <defs>
             <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_1_47" x1="45.5" x2="1483.5" y1="36" y2="968">
@@ -364,7 +364,7 @@ export default function App() {
           )}
 
           {/* Status text */}
-          <text x="756" y="650" textAnchor="middle" fill="#FFFFFF" fontSize="24" fontFamily="Inter, sans-serif" fontWeight="500">
+          <text x="756" y="650" textAnchor="middle" fill="#FFFFFF" fontSize="20" fontFamily="Inter, sans-serif" fontWeight="500" className="mobile:text-lg sm:text-xl md:text-2xl">
             {isAnalyzing ? "Analyzing..." : isRecording ? "Tap to stop" : "Tap to listen"}
           </text>
         </svg>

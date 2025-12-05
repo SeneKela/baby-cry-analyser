@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Temporarily reset for local dev verification
+  base: '/baby-cry-analyser/', // GitHub Pages repository path
   build: {
     outDir: 'dist',
     sourcemap: false
