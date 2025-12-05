@@ -86,22 +86,33 @@ def waveform_to_mel(waveform):
     mel_spec = pad_truncate(mel_spec, MAX_LEN)
     return mel_spec
 
-#LOAD MODEL
-model = CryModel().to(DEVICE)
-if os.path.exists(MODEL_PATH):
-    model.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE))
-    model.eval()
-else:
-    print(f"Warning: Model file not found at {MODEL_PATH}")
+# GLOBAL MODEL VARIABLE
+model = None
+
+def get_model():
+    global model
+    if model is None:
+        print("Loading model...")
+        model = CryModel().to(DEVICE)
+        if os.path.exists(MODEL_PATH):
+            model.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE))
+            model.eval()
+            print("Model loaded successfully.")
+        else:
+            print(f"Warning: Model file not found at {MODEL_PATH}")
+    return model
 
 #PREDICTION FUNCTION
 def predict_audio(file_path):
+    # Ensure model is loaded
+    current_model = get_model()
+    
     waveform = load_wav(file_path)
     mel_spec = waveform_to_mel(waveform)
     mel_spec = mel_spec.unsqueeze(0).to(DEVICE)  # batch dim (1, time, mel)
     
     with torch.no_grad():
-        logits = model(mel_spec)
+        logits = current_model(mel_spec)
         probs = F.softmax(logits, dim=1)
         conf, idx = torch.max(probs, dim=1)
     pred_class = CLASS_NAMES[idx.item()]
