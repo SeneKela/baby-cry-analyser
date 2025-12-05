@@ -1,5 +1,5 @@
 fastapi
-uvicorn
+uvicorn[standard]
 python-multipart
 torch
 torchaudio
@@ -7,3 +7,4 @@ librosa
 numpy
 soundfile
 pydub
+reportlab

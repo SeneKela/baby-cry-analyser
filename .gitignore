@@ -13,7 +13,8 @@ env/
 node_modules/
 dist/
 .env.local
-.env.production.local
+.env.development.local
+# Keep .env.production for deployment config
 
 # IDE
 .vscode/

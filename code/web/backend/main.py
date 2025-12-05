@@ -21,7 +21,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",  # Development
-        "https://senekela.github.io"  # Production GitHub Pages
+        "https://senekela.github.io",  # Production GitHub Pages
+        "https://baby-cry-analyser-frontend.onrender.com"  # Render frontend
     ],
     allow_credentials=True,
     allow_methods=["*"],

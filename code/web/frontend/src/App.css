@@ -501,3 +501,34 @@ body {
 .gap-2\.5 { gap: 10px; }
 .hover\:bg-white:hover { background-color: white; }
 .font-bold { font-weight: 700; }
+
+/* New utilities for Full Page Result Card */
+.bg-white\/10 { background-color: rgba(255, 255, 255, 0.1); }
+.bg-white\/20 { background-color: rgba(255, 255, 255, 0.2); }
+.hover\:bg-white\/30:hover { background-color: rgba(255, 255, 255, 0.3); }
+.backdrop-blur-md { backdrop-filter: blur(12px); }
+.rounded-t-\[32px\] { border-top-left-radius: 32px; border-top-right-radius: 32px; }
+.text-4xl { font-size: 36px; line-height: 40px; }
+.text-5xl { font-size: 48px; line-height: 1; }
+.active\:scale-95:active { transform: scale(0.95); }
+.border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
+.border-white\/20 { border-color: rgba(255, 255, 255, 0.2); }
+.text-white\/90 { color: rgba(255, 255, 255, 0.9); }
+.shadow-up-lg { box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.1); }
+.space-y-4 > * + * { margin-top: 16px; }
+.size-24 { width: 96px; height: 96px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.flex-col { flex-direction: column; }
+.pt-12 { padding-top: 48px; }
+.pb-8 { padding-bottom: 32px; }
+.px-8 { padding-left: 32px; padding-right: 32px; }
+.mt-4 { margin-top: 16px; }
+.mt-auto { margin-top: auto; }
+.mb-2 { margin-bottom: 8px; }
+.mb-8 { margin-bottom: 32px; }
+.inline-flex { display: inline-flex; }
+.py-1\.5 { padding-top: 6px; padding-bottom: 6px; }
+.px-4 { padding-left: 16px; padding-right: 16px; }
+.text-lg { font-size: 18px; line-height: 28px; }
+.p-4 { padding: 16px; }
+.border-gray-100 { border-color: #f3f4f6; }
