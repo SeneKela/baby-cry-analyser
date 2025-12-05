@@ -16,6 +16,14 @@ from generate_report import create_report
 
 app = FastAPI(title="CrySense AI API")
 
+@app.get("/")
+async def health_check():
+    return {"status": "ok", "service": "CrySense AI API"}
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,

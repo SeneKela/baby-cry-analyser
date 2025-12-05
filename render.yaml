@@ -1,9 +1,24 @@
 services:
   - type: web
-    name: baby-cry-analyser-backend
+    name: baby-cry-analyser
     env: python
     buildCommand: pip install -r code/web/backend/requirements.txt
     startCommand: cd code/web/backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.0
+    healthCheckPath: /health
+
+  # Frontend Static Site (from main branch)
+  - type: web
+    name: baby-cry-analyser-frontend
+    env: static
+    buildCommand: cd code/web/frontend && npm install && npm run build
+    staticPublishPath: code/web/frontend/dist
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
